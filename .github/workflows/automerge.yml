@@ -7,9 +7,11 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out
+        uses: actions/checkout@v3
       - name: automerge
-        uses: "pascalgn/automerge-action@v0.15.3"
+        run: gh pr merge $PR_NUMBER --admin
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
+          GITHUB_TOKEN: "${{ secrets.PAT }}"
+          PR_NUMBER: "${{ github.event.pull_request.number }}"
 
