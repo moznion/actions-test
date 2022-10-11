@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
-        uses: "pascalgn/automerge-action@v0.15.3"
+        run: gh pr merge $PR_URL --admin
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
+          GITHUB_TOKEN: "${{ secrets.PAT }}"
+          PR_URL: "${{ github.event.pull_request.url }}"
 
