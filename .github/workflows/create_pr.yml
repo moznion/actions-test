@@ -5,6 +5,8 @@ jobs:
   make_pull_request:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out
+        uses: actions/checkout@v3
       - name: Create a backport pull request to develop
         uses: peter-evans/create-pull-request@v4
         with:
