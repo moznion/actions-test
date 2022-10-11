@@ -1,0 +1,15 @@
+on:
+  push:
+
+jobs:
+  make_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a backport pull request to develop
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: develop
+          branch: master
+          delete-branch: true
+          title: "TODO"
+
