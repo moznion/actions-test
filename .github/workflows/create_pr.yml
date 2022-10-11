@@ -7,11 +7,8 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-      - name: Create a backport pull request to develop
-        uses: peter-evans/create-pull-request@v4
-        with:
-          base: develop
-          branch: master
-          delete-branch: true
-          title: "TODO"
+      - name: create pr
+        run: gh pr create --base develop --head master --title "TODO"
+        env:
+          GITHUB_TOKEN: "${{ secrets.PAT }}"
 
