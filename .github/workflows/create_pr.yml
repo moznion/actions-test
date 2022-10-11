@@ -8,7 +8,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
       - name: create pr
-        run: gh pr create --base develop --head master --title "TODO" --body "todo"
+        run: gh pr create --base develop --head main --title "TODO" --body "todo"
         env:
           GITHUB_TOKEN: "${{ secrets.PAT }}"
 
