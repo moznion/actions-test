@@ -10,8 +10,9 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-      - run: exit 1
+      - run: exit 0
   call-workflow:
     needs: [test]
+    if: ${{ github.ref_type == 'tag' }}
     uses: ./.github/workflows/following.yml
 
