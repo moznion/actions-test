@@ -13,7 +13,4 @@ jobs:
       - run: echo ${{ env.REF }}
         env:
           REF: "${{ github.ref_type }}"
-      - run: echo ${{ env.CONC }}
-        env:
-          CONC: "${{ github.event.workflow_run.conclusion }}"
 

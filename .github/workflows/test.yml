@@ -10,9 +10,7 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-      - run: echo ${{ env.REF }}
-        env:
-          REF: "${{ github.ref_type }}"
+      - run: exit 1
   call-workflow:
     needs: [test]
     uses: ./.github/workflows/following.yml
