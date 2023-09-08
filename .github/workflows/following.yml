@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-      - run: echo ${{ env.REF }}
+      - run: echo ${{ env.SHA }}
         env:
-          REF: "${{ github.ref_type }}"
+          SHA: ${{ github.sha }}
 
