@@ -13,4 +13,7 @@ jobs:
       - run: echo ${{ env.REF }}
         env:
           REF: "${{ github.ref_type }}"
+  call-workflow:
+    needs: [test]
+    uses: ./.github/workflows/following.yml
 

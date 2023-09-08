@@ -2,11 +2,7 @@
 name: following
 
 on:
-  workflow_run:
-    workflows:
-      - test
-    types:
-      - completed
+  workflow_call:
 
 jobs:
   test:
