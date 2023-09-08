@@ -1,0 +1,10 @@
+---
+push:
+  on:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.ref_type }}
+
