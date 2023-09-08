@@ -3,6 +3,9 @@ name: following
 
 on:
   workflow_call:
+    secrets:
+      PASSWORD:
+        required: true
 
 jobs:
   test:
@@ -13,4 +16,6 @@ jobs:
       - run: echo ${{ env.SHA }}
         env:
           SHA: ${{ github.sha }}
-
+      - run: echo ${{ env.PASSWORD }}
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}

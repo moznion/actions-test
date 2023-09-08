@@ -13,6 +13,7 @@ jobs:
       - run: exit 0
   call-workflow:
     needs: [test]
-    if: ${{ github.ref_type == 'tag' }}
     uses: ./.github/workflows/following.yml
+    secrets:
+      PASSWORD: ${{ secrets.PASSWORD }}
 
