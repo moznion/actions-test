@@ -1,0 +1,21 @@
+---
+on:
+  workflow_run:
+    workflows:
+      - test
+    types:
+      - completed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - run: echo ${{ env.REF }}
+        env:
+          REF: "${{ github.ref_type }}"
+      - run: echo ${{ env.CONC }}
+        env:
+          CONC: "${{ github.event.workflow_run.conclusion }}"
+
